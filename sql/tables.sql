@@ -23,7 +23,6 @@ CREATE TABLE `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  KEY `user_email` (`email`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 SET FOREIGN_KEY_CHECKS=1;
