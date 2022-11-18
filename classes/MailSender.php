@@ -20,14 +20,12 @@ class MailSender
 		$header .= "Content-Transfer-Encoding: 8bit\r\n" ;
 
 		if( !USE_EXTERNAL_SMTP_SERVER ) {
-			//$success = mail($to, $subject, $message, $header);
-			$success = true;
+			$success = mail($to, $subject, $message, $header);
 			if ($success) {
 				$responce = 'Ok';
 			} else {
 				$responce = error_get_last()['message'];
 			}
-			sleep(2);
 		} else {
 			try {
 				$connection = fsockopen('ssl://'.SMTP_SERVER_HOST, SMTP_SERVER_PORT) ;
